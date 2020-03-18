@@ -1,0 +1,29 @@
+disabled_rules: # rule identifiers to exclude from running
+- force_cast
+- for_where
+- notification_center_detachment
+
+#Customized Rules
+line_length:
+    warning: 130
+    error: 150
+
+file_length:
+    warning: 600
+    error: 700
+vertical_whitespace:
+    warning: 2
+    max_empty_lines: 1
+
+identifier_name:
+    excluded: # excluded via string array
+        - id
+        - URL
+        - GlobalAPIKey
+        - i
+        - j
+        - first_name
+        - last_name
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)
