@@ -8,20 +8,16 @@
 
 import Foundation
 
-extension UsersViewController : UsersView {
+extension UsersViewController: UsersView {
     func showIndicator() {
         showActivityIndicator()
     }
-    
     func hideIndicator() {
         hideActivityIndicator()
-        
     }
-    
     func fetchData() {
         tableView.reloadData()
     }
-    
     func showError(error: String) {
         print(error)
     }

@@ -13,11 +13,9 @@ struct UsersFeedResult: Decodable {
 }
 
 struct DataModel: Decodable {
-    let id:Int
+    let id: Int
     let email: String?
     let first_name: String?
     let last_name: String?
     let avatar: String?
 }
-
-

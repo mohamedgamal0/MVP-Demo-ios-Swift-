@@ -15,18 +15,16 @@ extension UIView {
         self.clipsToBounds = true
     }
 }
-
 extension UIImageView {
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     func downloadImage(from url: URL) {
-        getData(from: url) {
-            data, response, error in
+        getData(from: url) { data, _, error in
             guard let data = data, error == nil else {
                 return
             }
-            DispatchQueue.main.async() {
+            DispatchQueue.main.async {
                 self.image = UIImage(data: data)
             }
         }
@@ -36,7 +34,7 @@ extension UIImageView {
 extension UIViewController {
     func showActivityIndicator() {
         let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        activityIndicator.backgroundColor = UIColor(red:0.16, green:0.17, blue:0.21, alpha:1)
+        activityIndicator.backgroundColor = UIColor(red: 0.16, green: 0.17, blue: 0.21, alpha: 1)
         activityIndicator.layer.cornerRadius = 6
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
@@ -52,7 +50,6 @@ extension UIViewController {
         }
         view.addSubview(activityIndicator)
     }
-    
     func hideActivityIndicator() {
         let activityIndicator = view.viewWithTag(100) as? UIActivityIndicatorView
         activityIndicator?.stopAnimating()

@@ -12,7 +12,6 @@ class UsersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let cellId = "UsersCell"
     var presenter: UsersVcPresenter!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -20,4 +19,3 @@ class UsersViewController: UIViewController {
         presenter.didAttach()
     }
 }
-

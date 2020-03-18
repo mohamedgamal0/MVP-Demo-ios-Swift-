@@ -16,14 +16,12 @@ extension Endpoint {
     var apiKey: String {
         return "api_key="
     }
-    
     var urlComponents: URLComponents {
         var components = URLComponents(string: base)!
         components.path = path
         //components.query = apiKey
         return components
     }
-    
     var request: URLRequest {
         let url = urlComponents.url!
         return URLRequest(url: url)
@@ -39,7 +37,6 @@ extension UserFeed: Endpoint {
     var base: String {
         return "https://reqres.in"
     }
-    
     var path: String {
         switch self {
         case .currentUsers: return "/api/users"
@@ -47,11 +44,3 @@ extension UserFeed: Endpoint {
         }
     }
 }
-
-
-
-
-
-
-
-

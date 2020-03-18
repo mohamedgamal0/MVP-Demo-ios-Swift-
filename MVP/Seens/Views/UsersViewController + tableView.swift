@@ -8,29 +8,22 @@
 
 import UIKit
 
-extension UsersViewController: UITableViewDelegate , UITableViewDataSource {
-    
+extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
     func setupView() {
         title = "Users List"
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.register(UINib(nibName: self.cellId, bundle: nil), forCellReuseIdentifier: self.cellId)
     }
- 
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.getUsersCount()
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellId, for: indexPath) as! UsersCell
         presenter.configureUserCell(cell: cell, for: indexPath.row)
         return cell
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return  UITableView.automaticDimension
     }
 }
-
-
