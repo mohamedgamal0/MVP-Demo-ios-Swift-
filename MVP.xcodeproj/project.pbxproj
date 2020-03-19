@@ -25,7 +25,13 @@
 		ED16D20A2420CA2F0048381D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16D2092420CA2F0048381D /* Result.swift */; };
 		ED16D20E2420CC8A0048381D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16D20D2420CC8A0048381D /* Endpoint.swift */; };
 		ED16D2122420CF690048381D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16D2112420CF690048381D /* Model.swift */; };
-		ED16D21624210B050048381D /* MyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16D21524210B050048381D /* MyClient.swift */; };
+		ED16D21624210B050048381D /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16D21524210B050048381D /* UserInteractor.swift */; };
+		ED3E5A5424236EB4004BFA80 /* UsersRouterVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E5A5324236EB4004BFA80 /* UsersRouterVc.swift */; };
+		ED3E5A5D2423787C004BFA80 /* UserDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E5A5B2423787C004BFA80 /* UserDetailsVC.swift */; };
+		ED3E5A5E2423787C004BFA80 /* UserDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED3E5A5C2423787C004BFA80 /* UserDetailsVC.xib */; };
+		ED3E5A6424237A9B004BFA80 /* UserDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E5A6324237A9B004BFA80 /* UserDetailsRouter.swift */; };
+		ED3E5A6624237AC5004BFA80 /* UserDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E5A6524237AC5004BFA80 /* UserDetailsPresenter.swift */; };
+		ED3E5A6824237FA4004BFA80 /* UsersDetailsVc + PresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E5A6724237FA4004BFA80 /* UsersDetailsVc + PresenterDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +55,13 @@
 		ED16D2092420CA2F0048381D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		ED16D20D2420CC8A0048381D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		ED16D2112420CF690048381D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		ED16D21524210B050048381D /* MyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClient.swift; sourceTree = "<group>"; };
+		ED16D21524210B050048381D /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
+		ED3E5A5324236EB4004BFA80 /* UsersRouterVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRouterVc.swift; sourceTree = "<group>"; };
+		ED3E5A5B2423787C004BFA80 /* UserDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsVC.swift; sourceTree = "<group>"; };
+		ED3E5A5C2423787C004BFA80 /* UserDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsVC.xib; sourceTree = "<group>"; };
+		ED3E5A6324237A9B004BFA80 /* UserDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRouter.swift; sourceTree = "<group>"; };
+		ED3E5A6524237AC5004BFA80 /* UserDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenter.swift; sourceTree = "<group>"; };
+		ED3E5A6724237FA4004BFA80 /* UsersDetailsVc + PresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersDetailsVc + PresenterDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +127,8 @@
 		ED16D1E52420B3DF0048381D /* Seens */ = {
 			isa = PBXGroup;
 			children = (
-				ED16D1F82420C15B0048381D /* Presenter */,
-				ED16D1F72420C12A0048381D /* Views */,
+				ED3E5A5F242379CA004BFA80 /* Users */,
+				ED3E5A6024237A05004BFA80 /* UserDetails */,
 			);
 			path = Seens;
 			sourceTree = "<group>";
@@ -157,10 +169,7 @@
 		ED16D1F72420C12A0048381D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ED16D1E82420B4290048381D /* UsersViewController.swift */,
-				ED16D1F32420B6E10048381D /* UsersViewController + tableView.swift */,
-				ED123E16242228B300E58BDA /* UsersVc+PresenterDelegate.swift */,
-				ED16D1E92420B4290048381D /* UsersViewController.xib */,
+				ED3E5A592423783F004BFA80 /* UsersViewController */,
 				ED123E0A24220AA400E58BDA /* UsersCell */,
 			);
 			path = Views;
@@ -197,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				ED16D1FD2420C6C40048381D /* APIClient.swift */,
-				ED16D21524210B050048381D /* MyClient.swift */,
 			);
 			path = Manger;
 			sourceTree = "<group>";
@@ -216,6 +224,80 @@
 				ED16D20D2420CC8A0048381D /* Endpoint.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		ED3E5A5524236EB8004BFA80 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E5A5324236EB4004BFA80 /* UsersRouterVc.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		ED3E5A5824236FE8004BFA80 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				ED16D21524210B050048381D /* UserInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		ED3E5A592423783F004BFA80 /* UsersViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ED16D1E82420B4290048381D /* UsersViewController.swift */,
+				ED16D1F32420B6E10048381D /* UsersViewController + tableView.swift */,
+				ED123E16242228B300E58BDA /* UsersVc+PresenterDelegate.swift */,
+				ED16D1E92420B4290048381D /* UsersViewController.xib */,
+			);
+			path = UsersViewController;
+			sourceTree = "<group>";
+		};
+		ED3E5A5A24237857004BFA80 /* UserDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E5A5B2423787C004BFA80 /* UserDetailsVC.swift */,
+				ED3E5A6724237FA4004BFA80 /* UsersDetailsVc + PresenterDelegate.swift */,
+				ED3E5A5C2423787C004BFA80 /* UserDetailsVC.xib */,
+			);
+			path = UserDetailsViewController;
+			sourceTree = "<group>";
+		};
+		ED3E5A5F242379CA004BFA80 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E5A5524236EB8004BFA80 /* Router */,
+				ED3E5A5824236FE8004BFA80 /* Interactor */,
+				ED16D1F82420C15B0048381D /* Presenter */,
+				ED16D1F72420C12A0048381D /* Views */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		ED3E5A6024237A05004BFA80 /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E5A6124237A66004BFA80 /* Router */,
+				ED3E5A6224237A74004BFA80 /* Presenter */,
+				ED3E5A5A24237857004BFA80 /* UserDetailsViewController */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		ED3E5A6124237A66004BFA80 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E5A6324237A9B004BFA80 /* UserDetailsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		ED3E5A6224237A74004BFA80 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				ED3E5A6524237AC5004BFA80 /* UserDetailsPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +361,7 @@
 			files = (
 				ED16D1DE2420B3D10048381D /* LaunchScreen.storyboard in Resources */,
 				ED123E1024220BDF00E58BDA /* UsersCell.xib in Resources */,
+				ED3E5A5E2423787C004BFA80 /* UserDetailsVC.xib in Resources */,
 				ED16D1DB2420B3D10048381D /* Assets.xcassets in Resources */,
 				ED16D1D92420B3D10048381D /* Main.storyboard in Resources */,
 				ED16D1EB2420B4290048381D /* UsersViewController.xib in Resources */,
@@ -313,19 +396,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3E5A6824237FA4004BFA80 /* UsersDetailsVc + PresenterDelegate.swift in Sources */,
 				ED16D20A2420CA2F0048381D /* Result.swift in Sources */,
 				ED16D1F42420B6E10048381D /* UsersViewController + tableView.swift in Sources */,
+				ED3E5A6424237A9B004BFA80 /* UserDetailsRouter.swift in Sources */,
 				ED123E17242228B300E58BDA /* UsersVc+PresenterDelegate.swift in Sources */,
+				ED3E5A5424236EB4004BFA80 /* UsersRouterVc.swift in Sources */,
 				ED16D2122420CF690048381D /* Model.swift in Sources */,
 				ED123E0F24220BDF00E58BDA /* UsersCell.swift in Sources */,
 				ED16D1EA2420B4290048381D /* UsersViewController.swift in Sources */,
-				ED16D21624210B050048381D /* MyClient.swift in Sources */,
+				ED16D21624210B050048381D /* UserInteractor.swift in Sources */,
 				ED16D1D22420B3D10048381D /* AppDelegate.swift in Sources */,
 				ED123E1324220F3C00E58BDA /* Extentions.swift in Sources */,
 				ED16D2082420C96D0048381D /* APIError.swift in Sources */,
 				ED16D1D42420B3D10048381D /* SceneDelegate.swift in Sources */,
+				ED3E5A5D2423787C004BFA80 /* UserDetailsVC.swift in Sources */,
 				ED16D20E2420CC8A0048381D /* Endpoint.swift in Sources */,
 				ED16D1FE2420C6C40048381D /* APIClient.swift in Sources */,
+				ED3E5A6624237AC5004BFA80 /* UserDetailsPresenter.swift in Sources */,
 				ED123E152422128600E58BDA /* UsersViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,11 +11,11 @@ import UIKit
 class UsersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let cellId = "UsersCell"
-    var presenter: UsersVcPresenter!
+    var presenter: UsersVcPresenter?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        presenter = UsersVcPresenter(view: self)
-        presenter.didAttach()
+        //presenter = UsersVcPresenter(view: self)
+        presenter?.didAttach()
     }
 }

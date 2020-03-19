@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UsersViewController: UsersView {
     func showIndicator() {
@@ -21,4 +22,7 @@ extension UsersViewController: UsersView {
     func showError(error: String) {
         print(error)
     }
+    func navigateTouserDetailsScreen(user: DataModel) {
+        navigationController?.pushViewController(UIViewController(), animated: true)
+     }
 }

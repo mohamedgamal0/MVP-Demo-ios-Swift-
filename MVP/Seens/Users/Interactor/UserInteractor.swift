@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MyClient: APIClient {
+class UserInteractor: APIClient {
     let session: URLSession
      init(configuration: URLSessionConfiguration) {
          self.session = URLSession(configuration: configuration)

@@ -9,6 +9,7 @@
 import Foundation
 
 protocol UsersView: class {
+    var presenter: UsersVcPresenter? {get set}
     func showIndicator()
     func hideIndicator()
     func fetchData()
@@ -24,17 +25,20 @@ protocol UserCellView: class {
 
 class UsersVcPresenter {
     private weak var userView: UsersView?
-    private let client = MyClient()
+    private let interactor: UserInteractor
+    private let router: UsersRouterVc
     private var userArray = [DataModel]()
-    init(view: UsersView) {
+    init(view: UsersView?, interactor: UserInteractor, router: UsersRouterVc) {
         self.userView = view
+        self.interactor = interactor
+        self.router = router
     }
     func didAttach() {
         getUserData()
     }
     func getUserData() {
         userView?.showIndicator()
-        client.getFeed(from: .currentUsers) { [weak self] result in
+        interactor.getFeed(from: .currentUsers) { [weak self] result in
             guard let self = self else { return }
             self.userView?.hideIndicator()
             switch result {
@@ -56,5 +60,9 @@ class UsersVcPresenter {
         cell.displayID(userId: users.id)
         cell.displayName(name: "\(users.first_name ?? "") \(users.last_name ?? "")")
         cell.displayEmail(email: users.email ?? "")
+    }
+    func didselectRow(index: Int) {
+        let user = userArray[index]
+        router.navigateToUserDetailsScreen(from: userView, user: user)
     }
 }
