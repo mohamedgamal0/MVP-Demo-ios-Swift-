@@ -15,7 +15,10 @@ struct UsersFeedResult: Decodable {
 struct DataModel: Decodable {
     let id: Int
     let email: String?
-    let first_name: String?
-    let last_name: String?
+    let firstName: String?
+    let lastName: String?
     let avatar: String?
+    private enum CodingKeys: String, CodingKey {
+           case id, email, firstName = "first_name", lastName = "last_name", avatar
+       }
 }

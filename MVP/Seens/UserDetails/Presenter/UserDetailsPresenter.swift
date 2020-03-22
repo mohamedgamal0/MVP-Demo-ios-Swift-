@@ -25,7 +25,7 @@ class UserDetailsPresenter {
     func viewDidAttach() {
         view?.displayEmail(email: user.email ?? "")
         view?.displayID(userId: user.id)
-        view?.displayName(name: "\(user.first_name ?? "") \(user.last_name ?? "")")
+        view?.displayName(name: "\(user.firstName ?? "") \(user.lastName ?? "")")
         view?.displayImage(image: user.avatar ?? "")
     }
 }

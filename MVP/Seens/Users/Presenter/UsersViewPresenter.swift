@@ -58,7 +58,7 @@ class UsersVcPresenter {
         let users = userArray[index]
         cell.displayImage(image: users.avatar ?? "")
         cell.displayID(userId: users.id)
-        cell.displayName(name: "\(users.first_name ?? "") \(users.last_name ?? "")")
+        cell.displayName(name: "\(users.firstName ?? "") \(users.lastName ?? "")")
         cell.displayEmail(email: users.email ?? "")
     }
     func didselectRow(index: Int) {
